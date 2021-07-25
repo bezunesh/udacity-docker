@@ -1,0 +1,22 @@
+FROM python:3.7.3-stretch
+
+## Complete Step 1:
+# Create a Working Directory
+WORKDIR /app
+
+## Complete Step 2:
+# Copy source code to working directory
+COPY . /app/
+
+## Complete Step 3:
+# Install packages from requirements.txt
+# hadolint ignore=DL3013
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install -r --no-cache-dir requirements.txt
+
+
+## Complete Step 4:
+# Expose port 80
+
+## Complete Step 5:
+# Run app.py at container launch
